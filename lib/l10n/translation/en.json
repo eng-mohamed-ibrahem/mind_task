@@ -1,0 +1,19 @@
+{
+    "app": {
+        "name": "Mind Task"
+    },
+    "core": {
+        "loading": "Loading..."
+    },
+    "auth": {
+        "login": "Login",
+        "email": "Email",
+        "password": "Password",
+        "requierd": {
+            "email": "Email is required",
+            "password": "Password is required"
+        },
+        "failed": "Invalid email or password",
+        "or_signin": "Or sign in with"
+    }
+}
