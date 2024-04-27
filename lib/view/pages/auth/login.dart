@@ -72,7 +72,7 @@ class _LoginState extends State<Login> {
                   listener: (context, state) {
                     if (state.isLoginSuccess) {
                       showSnackBar(context, message: 'auth.login_success'.tr());
-                      
+
                       Navigator.pushNamedAndRemoveUntil(
                         context,
                         GenerateRouter.mainNavigation,

@@ -4,7 +4,11 @@
     },
     "core": {
         "loading": "Loading...",
-        "no_internet": "No internet connection"
+        "no_internet": "No internet connection",
+        "retry": "Retry",
+        "more": "More",
+        "pound": "AED",
+        "discount": "Discount"
     },
     "auth": {
         "login": "Login",
@@ -16,5 +20,12 @@
         },
         "login_success": "Login successfully",
         "or_signin": "Or sign in with"
+    },
+    "home": {
+        "search": "Search products",
+        "products": "Products",
+        "categories": "Categories",
+        "new_products": "New Products",
+        "selected_products": "Selected Products"
     }
 }
