@@ -4,12 +4,12 @@ import 'package:mind_task/core/request_result/request_result.dart';
 import 'package:mind_task/core/utils/api_consumer/api_consumer.dart';
 
 class DioConsumer implements ApiConsumer {
-  final String _baseUrl = 'https://api.quotable.io/';
   late final Dio dio;
-  DioConsumer() {
+  final String? baseUrl;
+  DioConsumer({this.baseUrl}) {
     dio = Dio(
       BaseOptions(
-        baseUrl: _baseUrl,
+        baseUrl: baseUrl ?? '',
         receiveDataWhenStatusError: true,
         followRedirects: false,
       ),
@@ -101,6 +101,7 @@ class DioConsumer implements ApiConsumer {
   }) async {
     try {
       dio.options.headers = {
+        "Accept-Language": "ar",
         "Content-Type": isFormData ? "multipart/form-data" : "application/json",
         if (sendAuthToken) "Authorization": "Bearer token",
       };

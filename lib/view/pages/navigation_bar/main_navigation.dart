@@ -12,7 +12,7 @@ class MainNavigationBar extends StatefulWidget {
 
 class _MainNavigationBarState extends State<MainNavigationBar>
     with TickerProviderStateMixin {
-  late final MotionTabBarController? _motionTabBarController;
+  late final MotionTabBarController _motionTabBarController;
 
   @override
   void initState() {
@@ -26,8 +26,8 @@ class _MainNavigationBarState extends State<MainNavigationBar>
 
   @override
   void dispose() {
+    _motionTabBarController.dispose();
     super.dispose();
-    _motionTabBarController!.dispose();
   }
 
   @override
@@ -70,7 +70,7 @@ class _MainNavigationBarState extends State<MainNavigationBar>
         tabBarColor: Colors.white,
         onTabItemSelected: (int value) {
           setState(() {
-            _motionTabBarController!.index = value;
+            _motionTabBarController.index = value;
           });
         },
       ),

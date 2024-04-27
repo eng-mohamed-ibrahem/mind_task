@@ -14,8 +14,8 @@ class Assets {
   static const String iconsCart = "assets/icons/cart.svg";
 
   /// Assets for iconsEmail
-  /// assets/icons/email.svg
-  static const String iconsEmail = "assets/icons/email.svg";
+  /// assets/icons/email.png
+  static const String iconsEmail = "assets/icons/email.png";
 
   /// Assets for iconsFacebookIcon
   /// assets/icons/facebook_icon.svg
@@ -50,15 +50,19 @@ class Assets {
   static const String iconsOilIcon = "assets/icons/oil_icon.svg";
 
   /// Assets for iconsPassLock
-  /// assets/icons/pass_lock.svg
-  static const String iconsPassLock = "assets/icons/pass_lock.svg";
+  /// assets/icons/pass_lock.png
+  static const String iconsPassLock = "assets/icons/pass_lock.png";
 
   /// Assets for iconsProfile
   /// assets/icons/profile.svg
   static const String iconsProfile = "assets/icons/profile.svg";
 
-  /// Assets for imagesLogoIcon
-  /// assets/images/logo_icon.svg
-  static const String imagesLogoIcon = "assets/images/logo_icon.svg";
+  /// Assets for imagesLogo
+  /// assets/images/logo.svg
+  static const String imagesLogo = "assets/images/logo.svg";
+
+  /// Assets for imagesLogoImage
+  /// assets/images/logo_image.png
+  static const String imagesLogoImage = "assets/images/logo_image.png";
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mind_task/view/pages/login.dart';
+import 'package:mind_task/view/pages/auth/login.dart';
 import 'package:mind_task/view/pages/navigation_bar/main_navigation.dart';
 import 'package:mind_task/view/pages/splash.dart';
 

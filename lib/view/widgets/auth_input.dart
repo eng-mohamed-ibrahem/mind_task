@@ -30,7 +30,7 @@ class _AuthFieldInputState extends State<AuthFieldInput> {
       controller: widget.controller,
       validator: widget.validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      obscureText: isPasswordVisible,
+      obscureText: widget.isItPassword && !isPasswordVisible,
       decoration: InputDecoration(
         labelText: widget.labelText,
         hintText: widget.hintText,
@@ -46,8 +46,18 @@ class _AuthFieldInputState extends State<AuthFieldInput> {
                     : const Icon(Icons.visibility_rounded),
               )
             : null,
-        hintStyle: Theme.of(context).textTheme.bodySmall,
+        hintStyle: TextStyle(
+          color: HexColor('#A7A7A7'),
+        ),
         labelStyle: Theme.of(context).textTheme.bodySmall,
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+          borderSide: BorderSide(
+            color: HexColor('#757575'),
+            width: 2,
+            strokeAlign: BorderSide.strokeAlignOutside,
+          ),
+        ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: BorderSide(
@@ -56,9 +66,11 @@ class _AuthFieldInputState extends State<AuthFieldInput> {
             strokeAlign: BorderSide.strokeAlignOutside,
           ),
         ),
-        icon: widget.prefixIcon,
+        prefixIcon: widget.prefixIcon,
       ),
-      style: Theme.of(context).textTheme.titleMedium,
+      style: TextStyle(
+        color: HexColor('#A7A7A7'),
+      ),
     );
   }
 }
