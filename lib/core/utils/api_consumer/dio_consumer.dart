@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:mind_task/core/errors/failure.dart';
 import 'package:mind_task/core/request_result/request_result.dart';
 import 'package:mind_task/core/utils/api_consumer/api_consumer.dart';
+import 'package:mind_task/core/utils/local_database/cache_service.dart';
 
 class DioConsumer implements ApiConsumer {
   late final Dio dio;
@@ -101,7 +102,7 @@ class DioConsumer implements ApiConsumer {
   }) async {
     try {
       dio.options.headers = {
-        "Accept-Language": "ar",
+        "Accept-Language": CacheService.lang,
         "Content-Type": isFormData ? "multipart/form-data" : "application/json",
         if (sendAuthToken) "Authorization": "Bearer token",
       };

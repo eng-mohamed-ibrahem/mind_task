@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mind_task/view/pages/navigation_bar/home.dart';
+import 'package:mind_task/view/pages/navigation_bar/profile.dart';
 import 'package:mind_task/viewmodel/navigation_bar_viewmodel/navigation_bar_viewmodel.dart';
 import 'package:motion_tab_bar/MotionTabBar.dart';
 import 'package:motion_tab_bar/MotionTabBarController.dart';
@@ -51,7 +52,7 @@ class _MainNavigationBarState extends State<MainNavigationBar>
             Center(child: Text('Favorite')),
             Center(child: Text('Cart')),
             Center(child: Text('Products')),
-            Center(child: Text('Profile')),
+            Profile(),
           ],
         ),
       ),

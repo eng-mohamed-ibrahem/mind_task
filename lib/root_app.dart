@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mind_task/config/generate_router.dart';
 import 'package:mind_task/core/utils/dependency_locator/dependency_injection.dart';
+import 'package:mind_task/core/utils/local_database/cache_service.dart';
 import 'package:mind_task/viewmodel/navigation_bar_viewmodel/navigation_bar_viewmodel.dart';
 
 class RootApp extends StatelessWidget {
@@ -23,6 +24,10 @@ class RootApp extends StatelessWidget {
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
         locale: context.locale,
+        builder: (context, child) {
+          CacheService.saveLang(context.locale.languageCode);
+          return child!;
+        },
       ),
     );
   }

@@ -21,6 +21,9 @@
         "login_success": "Login successfully",
         "or_signin": "Or sign in with"
     },
+    "profile": {
+        "ch_lang": "Change language"
+    },
     "home": {
         "search": "Search products",
         "products": "Products",

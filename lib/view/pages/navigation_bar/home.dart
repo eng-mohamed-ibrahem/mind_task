@@ -3,9 +3,11 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mind_task/config/generate_router.dart';
 import 'package:mind_task/core/utils/hex_color/hex_color.dart';
 import 'package:mind_task/core/utils/shared_widgets/failed_widget.dart';
 import 'package:mind_task/core/utils/shared_widgets/loading_home.dart';
+import 'package:mind_task/view/widgets/category_item.dart';
 import 'package:mind_task/view/widgets/headline.dart';
 import 'package:mind_task/view/widgets/input_field.dart';
 import 'package:mind_task/view/widgets/product_item.dart';
@@ -89,24 +91,11 @@ class _HomeState extends State<Home> {
                       width: 20,
                     ),
                     itemBuilder: (context, index) {
-                      return Column(
-                        children: [
-                          Expanded(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(15),
-                              child: CachedNetworkImage(
-                                imageUrl:
-                                    state.homeData!.categories[index].icon,
-                                placeholder: (context, url) {
-                                  return const Center(
-                                    child: CircularProgressIndicator(),
-                                  );
-                                },
-                              ),
-                            ),
-                          ),
-                          Text(state.homeData!.categories[index].catName),
-                        ],
+                      return SizedBox(
+                        width: MediaQuery.sizeOf(context).width * .3,
+                        child: CategoryItem(
+                          category: state.homeData!.categories[index],
+                        ),
                       );
                     },
                   ),
@@ -121,7 +110,16 @@ class _HomeState extends State<Home> {
                     const Divider(),
                     Headline(
                       title: 'home.products'.tr(),
-                      onMore: () {},
+                      onMore: () {
+                        Navigator.pushNamed(
+                          context,
+                          GenerateRouter.productList,
+                          arguments: (
+                            products: state.homeData!.products,
+                            title: 'home.products'.tr()
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -159,7 +157,16 @@ class _HomeState extends State<Home> {
                     const Divider(),
                     Headline(
                       title: 'home.selected_products'.tr(),
-                      onMore: () {},
+                      onMore: () {
+                        Navigator.pushNamed(
+                          context,
+                          GenerateRouter.productList,
+                          arguments: (
+                            products: state.homeData!.selectedProducts,
+                            title: 'home.selected_products'.tr()
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -192,7 +199,16 @@ class _HomeState extends State<Home> {
                     const Divider(),
                     Headline(
                       title: 'home.new_products'.tr(),
-                      onMore: () {},
+                      onMore: () {
+                        Navigator.pushNamed(
+                          context,
+                          GenerateRouter.productList,
+                          arguments: (
+                            products: state.homeData!.newProducts,
+                            title: 'home.new_products'.tr()
+                          ),
+                        );
+                      },
                     ),
                     const SizedBox(height: 20),
                   ],
@@ -207,7 +223,7 @@ class _HomeState extends State<Home> {
                     itemBuilder: (context, index) {
                       return ProductItem(
                         product: state.homeData!.newProducts[index],
-                        currencyColor: HexColor('#FF0000'),
+                        currencyColor: HexColor('#000000'),
                       );
                     },
                     separatorBuilder: (context, index) =>

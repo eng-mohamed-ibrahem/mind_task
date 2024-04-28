@@ -18,4 +18,12 @@ class CacheService {
   static String get userId {
     return kSharedPreferences.getString(CacheConstants.userId) ?? '';
   }
+
+  static Future<bool> saveLang(String value) async {
+    return kSharedPreferences.setString(CacheConstants.lang, value);
+  }
+
+  static String get lang {
+    return kSharedPreferences.getString(CacheConstants.lang) ?? 'en';
+  }
 }

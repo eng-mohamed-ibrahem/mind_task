@@ -37,39 +37,28 @@ class ProductItem extends StatelessWidget {
           Text(product.name,
               style: const TextStyle(fontWeight: FontWeight.bold)),
           Text(product.shortDesc),
-          RichText(
-            text: TextSpan(
-              text: "${product.salePrice} ",
-              style: TextStyle(
-                color: currencyColor ?? HexColor('#333333'),
-                fontWeight: FontWeight.bold,
-              ),
-              children: [
-                TextSpan(
-                  text: 'core.pound'.tr(),
-                  style: TextStyle(color: currencyColor ?? HexColor('#333333')),
-                )
-              ],
-            ),
-          ),
-          RichText(
-            text: TextSpan(
-              text: "${product.listPrice} ",
-              style: TextStyle(
-                color: Colors.black,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.lineThrough,
-                decorationColor: HexColor('#707070'),
-              ),
-              children: [
-                TextSpan(
-                  text: 'core.pound'.tr(),
-                  style: const TextStyle(
-                    color: Colors.black,
+          isDiscount
+              ? Text(
+                  "${product.salePrice} ${'core.pound'.tr()}",
+                  style: TextStyle(
+                    color: currencyColor ?? HexColor('#CE9D22'),
+                    fontWeight: FontWeight.bold,
                   ),
                 )
-              ],
-            ),
+              : const Text(''),
+          Text(
+            "${product.listPrice} ${'core.pound'.tr()}",
+            style: isDiscount
+                ? TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    decoration: TextDecoration.lineThrough,
+                    decorationColor: HexColor('#707070'),
+                  )
+                : TextStyle(
+                    color: currencyColor ?? HexColor('#CE9D22'),
+                    fontWeight: FontWeight.bold,
+                  ),
           ),
           isDiscount
               ? Container(
