@@ -9,11 +9,9 @@ class ProductItem extends StatelessWidget {
     super.key,
     required this.product,
     this.currencyColor,
-    this.isDiscount = false,
   });
   final ProductModel product;
   final Color? currencyColor;
-  final bool isDiscount;
 
   @override
   Widget build(BuildContext context) {
@@ -37,41 +35,32 @@ class ProductItem extends StatelessWidget {
           Text(product.name,
               style: const TextStyle(fontWeight: FontWeight.bold)),
           Text(product.shortDesc),
-          isDiscount
-              ? Text(
-                  "${product.salePrice} ${'core.pound'.tr()}",
-                  style: TextStyle(
-                    color: currencyColor ?? HexColor('#CE9D22'),
-                    fontWeight: FontWeight.bold,
-                  ),
-                )
-              : const Text(''),
+          Text(
+            "${product.salePrice} ${'core.pound'.tr()}",
+            style: TextStyle(
+              color: currencyColor ?? HexColor('#CE9D22'),
+              fontWeight: FontWeight.bold,
+            ),
+          ),
           Text(
             "${product.listPrice} ${'core.pound'.tr()}",
-            style: isDiscount
-                ? TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    decoration: TextDecoration.lineThrough,
-                    decorationColor: HexColor('#707070'),
-                  )
-                : TextStyle(
-                    color: currencyColor ?? HexColor('#CE9D22'),
-                    fontWeight: FontWeight.bold,
-                  ),
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              decoration: TextDecoration.lineThrough,
+              decorationColor: HexColor('#707070'),
+            ),
           ),
-          isDiscount
-              ? Container(
-                  color: Colors.black,
-                  child: Text(
-                    "${'core.discount'.tr()} ${product.discount}%",
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                )
-              : const Text(''),
+          Container(
+            color: Colors.black,
+            child: Text(
+              "${'core.discount'.tr()} ${product.discount}%",
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
         ],
       ),
     );

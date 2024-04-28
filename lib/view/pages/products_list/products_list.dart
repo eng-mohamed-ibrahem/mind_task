@@ -13,6 +13,7 @@ class ProductsList extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(title),
+        centerTitle: true,
         leading: IconButton(
           style: ButtonStyle(
             backgroundColor: MaterialStateProperty.all(HexColor('#EFC40B')),

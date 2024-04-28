@@ -142,7 +142,6 @@ class _HomeState extends State<Home> {
                       return ProductItem(
                         product: state.homeData!.products[index],
                         currencyColor: HexColor('#CE9D22'),
-                        isDiscount: true,
                       );
                     },
                   ),
@@ -182,7 +181,6 @@ class _HomeState extends State<Home> {
                       return ProductItem(
                         product: state.homeData!.selectedProducts[index],
                         currencyColor: HexColor('#FF0000'),
-                        isDiscount: true,
                       );
                     },
                     separatorBuilder: (context, index) =>
