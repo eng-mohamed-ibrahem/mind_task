@@ -45,12 +45,12 @@ Here are the steps to use each screen:
 
 This app uses the following dependencies:
 
-1. **Flutter Bloc**: used for state management.
-2. **Easy Localization**: used for localization for different languages.
-3. **Shimmer**: used for loading screen.
-4. **Dio**: used for network requests and responses (e.g., get, post, etc.).
-5. **Shared Preferences**: used to store user data locally.
-6. **Get It**: used for dependency injection (e.g., service locator).
-7. **freezed**: used for generating data models.
-8. **cached_network_image**: used for displaying images from the internet.
-9. **connectivity_plus**: used for checking internet connection.
+1. `Flutter Bloc`: used for state management.
+2. `Easy Localization`: used for localization for different languages.
+3. `Shimmer`: used for loading screen.
+4. `Dio`: used for network requests and responses (e.g., get, post, etc.).
+5. `Shared Preferences`: used to store user data locally.
+6. `Get It`: used for dependency injection (e.g., service locator).
+7. `freezed`: used for generating data models.
+8. `cached_network_image`: used for displaying images from the internet.
+9. `connectivity_plus`: used for checking internet connection.
