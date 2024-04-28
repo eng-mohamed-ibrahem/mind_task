@@ -20,9 +20,8 @@ void main() async {
         Locale('en'),
         Locale('ar'),
       ],
-      fallbackLocale: const Locale('en'),
+      fallbackLocale: const Locale('ar'),
       saveLocale: true,
-      startLocale: const Locale('ar'),
       child: const RootApp(),
     ),
   );
